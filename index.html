@@ -4,26 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Tanvir Mahmud is a certified web developer specializing in Python Django, Tailwind CSS, and modern web solutions.">
     <title>Tanvir Mahmud | Certified Web Developer</title>
-
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
-        onload="this.media='all'">
-
-    <link rel="preload" as="image" href="tanvir-pro(rmbg).webp" fetchpriority="high">
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;700&display=swap"
+        rel="stylesheet">
 
 
-</head>
-
-
-<body class="dark-mode">
     <style>
         :root {
             --primary-color: #6366f1;
@@ -39,13 +30,6 @@
             --border-light: #e2e8f0;
             --border-dark: #334155;
             --accent-glow: rgba(99, 102, 241, 0.15);
-        }
-
-        a {
-            text-decoration: none;
-
-            color: inherit;
-
         }
 
         body {
@@ -79,16 +63,11 @@
             color: var(--text-dark) !important;
         }
 
-        .d-none {
+        [lang="en"] .lang-bn {
             display: none !important;
         }
 
-        html[lang="en"] .lang-bn {
-            display: none !important;
-        }
-
-
-        html[lang="bn"] .lang-en {
+        [lang="bn"] .lang-en {
             display: none !important;
         }
 
@@ -152,16 +131,9 @@
         }
 
         /* --- About Section Enhancement --- */
-
         .about-image-wrapper {
             position: relative;
             z-index: 1;
-        }
-
-        .about-image-wrapper img {
-            aspect-ratio: 1 / 1;
-            width: 100%;
-            height: auto;
         }
 
         .about-image-wrapper::before {
@@ -326,6 +298,9 @@
             font-size: 2.5rem;
         }
     </style>
+</head>
+
+<body class="dark-mode">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -420,15 +395,12 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
                     <div class="about-image-wrapper">
-                        <img src="tanvir-pro(rmbg).webp" width="450" height="450"
-                            alt="Tanvir Mahmud - Web Developer Portfolio" fetchpriority="high"
+                        <img src="tanvir-pro(rmbg).webp" alt="Tanvir Mahmud"
                             class="img-fluid rounded-4 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
-
                         <div class="experience-card position-absolute bottom-0 start-50 translate-middle-x mb-n4 w-75">
                             <h2 class="fw-bold mb-0">1+</h2>
                             <p class="small fw-bold text-uppercase mb-0 opacity-80">
-                                <span class="lang-bn">বছরের অভিজ্ঞতা</span>
-                                <span class="lang-en">Years Experience</span>
+                                <span class="lang-bn">বছরের অভিজ্ঞতা</span><span class="lang-en">Years Experience</span>
                             </p>
                         </div>
                     </div>
@@ -569,8 +541,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-container">
-                            <img src="Small School Or Department Management System.webp" alt="Corporate Website"
-                                loading="lazy">
+                            <img src="Small School Or Department Management System.webp" alt="Corporate Website">
                             <div class="project-overlay">
                                 <a href="https://fpi-cst.vercel.app/" class="project-btn" title="Live Preview"><i
                                         data-lucide="external-link"></i></a>
@@ -581,7 +552,7 @@
                         <div class="p-4">
                             <div class="badge bg-primary bg-opacity-10 text-primary mb-2">College</div>
                             <h5 class="fw-bold mb-3"><span class="lang-bn">স্টুডেন্ট ম্যানেজমেন্ট সমস্যা
-                                    সমাধান</span><span class="lang-en">Student Management Poblem Solve</span></h5>
+                                    সমাধান</span><span class="lang-en">Student Management Pablem Solve</span></h5>
                             <p class="text-muted small mb-4">
                                 <span class="lang-bn">আধুনিক ডিজাইনের একটি সম্পূর্ণ রেসপনসিভ ওয়েবসাইট যা প্রতিষ্ঠানের
                                     স্টুডেন্ট ম্যানেজমেন্ট সমস্যা সমাধান করে। </span>
@@ -601,7 +572,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-container">
-                            <img src="second-mockup-black.webp" alt="Custom Weather App" loading="lazy">
+                            <img src="second-mockup-black.webp" alt="Custom Weather App">
                             <div class="project-overlay">
                                 <a href="https://custom-weather-app.vercel.app/" class="project-btn"><i
                                         data-lucide="external-link"></i></a>
@@ -631,7 +602,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-container">
-                            <img src="pharmacy-p(1).webp" alt="Personal Blog" loading="lazy">
+                            <img src="pharmacy-p(1).webp" alt="Personal Blog">
                             <div class="project-overlay">
                                 <a href="https://tanvirdevl3.pythonanywhere.com/" class="project-btn"><i
                                         data-lucide="external-link"></i></a>
@@ -674,14 +645,15 @@
                         style="background: #111827; border-radius: 15px; border: 1px solid #1f2937;">
                         <h4 class="text-white mb-3">Pharmacy Management System Full Review</h4>
                         <div class="ratio ratio-16x9 shadow-lg" style="border-radius: 10px; overflow: hidden;">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/X0TS4gWRrtY"
-                                title="Pharmacy Management System Review" frameborder="0"
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/X0TS4gWRrtY?si=V1ufAQXCXgpYLrCJ"
+                                title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
-                            </iframe>
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -707,8 +679,7 @@
                             </div>
                             <div>
                                 <h6 class="text-muted small mb-1 uppercase font-bold">Email</h6>
-                                <a
-                                    href="mailto:tanvirmahmud.web.dev.lev3@gmail.com">tanvirmahmud.web.dev.lev3@gmail.com</a>
+                                <p class="fw-bold mb-0">tanvirmahmud.web.dev.lev3@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -719,7 +690,7 @@
                             </div>
                             <div>
                                 <h6 class="text-muted small mb-1 uppercase font-bold">Phone</h6>
-                                <a href="tel:+8801743812478">+880 1743812478</a>
+                                <p class="fw-bold mb-0">+880 1743812478</p>
                             </div>
                         </div>
                     </div>
@@ -775,7 +746,7 @@
         <div class="container text-center">
             <div class="mb-4">
                 <a href="https://github.com/tanvir404-mah" class="btn btn-outline-primary btn-sm rounded-pill mx-1"><i
-                        data-lucide="github" width="20" height="20" aria-label="GitHub Profile"></i></a>
+                        data-lucide="github" width="20" height="20"></i></a>
                 <a href="https://www.linkedin.com/in/tanvirmahmud08/"
                     class="btn btn-outline-primary btn-sm rounded-pill mx-1"><i data-lucide="linkedin" width="20"
                         height="20"></i></a>
@@ -789,12 +760,107 @@
             </p>
         </div>
     </footer>
+    <script>
+        // এই স্ক্রিপ্টটি লাইট/ডার্ক মোড এবং ভাষা পরিবর্তনের কাজ করে।
+        // Lucide icons সচল করার ফাংশন
+        const initIcons = () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                console.log('Lucide icons initialized');
+            } else {
+                console.error('Lucide library not found');
+            }
+        };
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
+        // DOM লোড হওয়ার পর আইকন ইনইট করা
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initIcons);
+        } else {
+            initIcons();
+        }
+
+        const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+        const langToggle = document.getElementById('lang-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+
+        // থিম পরিবর্তন (Light/Dark Mode)
+        themeToggle?.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.replace('dark-mode', 'light-mode');
+                sunIcon?.classList.add('d-none');
+                moonIcon?.classList.remove('d-none');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.replace('light-mode', 'dark-mode');
+                sunIcon?.classList.remove('d-none');
+                moonIcon?.classList.add('d-none');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // ভাষা পরিবর্তন (Bengali/English)
+        langToggle?.addEventListener('click', () => {
+            const currentLang = document.documentElement.getAttribute('lang') || 'bn';
+            const nextLang = currentLang === 'bn' ? 'en' : 'bn';
+            document.documentElement.setAttribute('lang', nextLang);
+            localStorage.setItem('lang', nextLang);
+        });
+
+        // আগে থেকে সেভ করা থিম এবং ভাষা লোড করা
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.replace('dark-mode', 'light-mode');
+            sunIcon?.classList.add('d-none');
+            moonIcon?.classList.remove('d-none');
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) {
+            document.documentElement.setAttribute('lang', savedLang);
+        }
+
+        // কন্টাক্ট ফর্ম সাবমিট (WhatsApp Redirect)
+        const contactForm = document.getElementById('contact-form');
+        contactForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('contact-name')?.value;
+            const email = document.getElementById('contact-email')?.value;
+            const subject = document.getElementById('contact-subject')?.value;
+            const message = document.getElementById('contact-message')?.value;
+
+            const btn = contactForm.querySelector('button[type="submit"]');
+            if (btn) {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Redirecting...';
+                btn.setAttribute('disabled', 'true');
+
+                // WhatsApp কনফিগারেশন
+                const phoneNumber = '8801743812478'; // আপনার হোয়াটসঅ্যাপ নম্বর
+                const whatsappMessage = `*New Inquiry from Portfolio*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n*Message:* ${message}`;
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                setTimeout(() => {
+                    // হোয়াটসঅ্যাপে রিডাইরেক্ট করা
+                    window.open(whatsappUrl, '_blank');
+
+                    btn.innerHTML = originalText;
+                    btn.removeAttribute('disabled');
+                    contactForm.reset();
+                }, 1000);
+            }
+        });
     </script>
+
+    <!-- Lucide Icons (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
+        // Fix for "Uncaught TypeError: Cannot set property fetch of #<Window> which has only a getter"
+        // This can happen if a library tries to polyfill fetch in an environment where it's read-only.
         (function () {
             var originalFetch = window.fetch;
             Object.defineProperty(window, 'fetch', {
@@ -807,7 +873,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="index.js" defer></script>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
