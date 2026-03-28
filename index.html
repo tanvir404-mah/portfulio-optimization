@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Tanvir Mahmud is a certified web developer specializing in Python Django, Tailwind CSS, and modern web solutions.">
+    <title>Tanvir Mahmud | Certified Web Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'">
+
+    <link rel="preload" as="image" href="tanvir-pro(rmbg).webp" fetchpriority="high">
+
+
+</head>
+
+
+<body class="dark-mode">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-light: #f8fafc;
+            --bg-dark: #0f172a;
+            --card-light: #ffffff;
+            --card-dark: #1e293b;
+            --text-light: #0f172a;
+            --text-dark: #f8fafc;
+            --muted-light: #64748b;
+            --muted-dark: #94a3af;
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+        }
+
+        a {
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        body.light-mode {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        .dark-mode .text-muted {
+            color: var(--muted-dark) !important;
+        }
+
+        .dark-mode .card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+
+        .dark-mode .badge {
+            color: var(--text-dark) !important;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+
+        html[lang="en"] .lang-bn {
+            display: none !important;
+        }
+
+
+        html[lang="bn"] .lang-en {
+            display: none !important;
+        }
+
+        /* Navbar Refinement */
+        .navbar {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+            z-index: 1050;
+        }
+
+        .dark-mode .navbar {
+            background-color: rgba(15, 23, 42, 0.9);
+            border-color: var(--border-dark);
+        }
+
+        .light-mode .navbar {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-color: var(--border-light);
+        }
+
+        .hero-section {
+            padding: 180px 0 120px;
+            position: relative;
+        }
+
+        .section-title {
+            font-weight: 800;
+            margin-bottom: 4rem;
+            text-align: center;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 14px 32px;
+            font-weight: 700;
+            border-radius: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px var(--accent-glow);
+        }
+
+        /* --- About Section Enhancement --- */
+
+        .about-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-wrapper img {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            height: auto;
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary-color);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .experience-card {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px -10px var(--accent-glow);
+        }
+
+        /* --- Skills Section Enhancement --- */
+        .skill-category-card {
+            border-radius: 24px;
+            padding: 2rem;
+            height: 100%;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+        }
+
+        .dark-mode .skill-category-card {
+            border-color: var(--border-dark);
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .skill-category-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 4px;
+            transition: all 0.2s;
+        }
+
+        .skill-pill:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Project Section Enhancement --- */
+        .project-card {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background: var(--card-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dark-mode .project-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+        }
+
+        .project-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .project-card:hover .project-img-container img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-btn {
+            width: 45px;
+            height: 45px;
+            background: white;
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .project-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .dark-mode .footer {
+            border-color: var(--border-dark);
+        }
+
+        .leading-relaxed {
+            line-height: 1.8;
+        }
+
+        .video-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border-color: #6366f1 !important;
+        }
+
+        .demo-video-section h2 {
+            font-size: 2.5rem;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#" style="color: inherit;">
+                <div
+                    style="width: 36px; height: 36px; background: var(--primary-color); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                    T</div>
+                <span>Tanvir<span class="text-primary">.dev</span></span>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link px-3" href="#about"><span class="lang-bn"
+                                style="color: white;">সম্পর্কে</span><span class="lang-en"
+                                style="color: white;">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#skills"><span class="lang-bn"
+                                style="color: white;">দক্ষতা</span><span class="lang-en"
+                                style="color: white;">Skills</span></a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#projects"><span class="lang-bn"
+                                style="color: white;">প্রজেক্ট</span><span class="lang-en"
+                                style="color: white;">Projects</span></a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact"><span class="lang-bn"
+                                style="color: white;">যোগাযোগ</span><span class="lang-en"
+                                style="color: white;">Contact</span></a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2">
+                    <div id="lang-toggle" class="fw-bold p-2 rounded-3 cursor-pointer" title="Switch Language"
+                        style="font-size: 0.85rem;">
+                        <span class="lang-bn">EN</span>
+                        <span class="lang-en">BN</span>
+                    </div>
+                    <div id="theme-toggle" class="p-2 rounded-3 cursor-pointer" title="Toggle Mode">
+                        <i data-lucide="sun" class="sun-icon"></i>
+                        <i data-lucide="moon" class="moon-icon d-none"></i>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-sm ms-2 rounded-pill px-4">
+                        <span class="lang-bn">হায়ার মি</span>
+                        <span class="lang-en">Hire Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div
+                        class="badge bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-pill mb-4 border border-primary border-opacity-20">
+                        <span class="lang-bn"> স্বাগতম আমার প্রোফাইলে</span>
+                        <span class="lang-en"> Welcome to my Profile</span>
+                    </div>
+                    <h1 class="display-2 fw-bolder mb-4 leading-tight">
+                        <span class="lang-bn">আমি <span class="text-primary">তানভীর মাহমুদ</span>, একজন ওয়েব
+                            কারিগর,আপনার চিন্তার বাস্তব রূপকার</span>
+                        <span class="lang-en">I'm <span class="text-primary">Tanvir Mahmud</span>, a Web
+                            Craftsman,your idea implementor </span>
+                    </h1>
+                    <p class="lead text-muted mx-auto mb-5 px-lg-5" style="max-width: 800px; font-weight: 500;">
+                        <span class="lang-bn">আধুনিক ওয়েব টেকনোলজি ব্যবহার করে আমি এমন ইন্টারফেস তৈরি করি যা শুধুমাত্র
+                            সুন্দর নয়, বরং অত্যন্ত কার্যকর।</span>
+                        <span class="lang-en">Using modern web technologies, I create interfaces that are not just
+                            beautiful, but highly functional.</span>
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="#projects" class="btn btn-primary px-5 py-3">
+                            <span class="lang-bn">আমার কাজ দেখুন</span>
+                            <span class="lang-en">View My Work</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary px-5 py-3 border-2 rounded-4 fw-bold">
+                            <span class="lang-bn">যোগাযোগ করুন</span>
+                            <span class="lang-en">Let's Talk</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-image-wrapper">
+                        <img src="tanvir-pro(rmbg).webp" width="450" height="450"
+                            alt="Tanvir Mahmud - Web Developer Portfolio" fetchpriority="high"
+                            class="img-fluid rounded-4 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+
+                        <div class="experience-card position-absolute bottom-0 start-50 translate-middle-x mb-n4 w-75">
+                            <h2 class="fw-bold mb-0">1+</h2>
+                            <p class="small fw-bold text-uppercase mb-0 opacity-80">
+                                <span class="lang-bn">বছরের অভিজ্ঞতা</span>
+                                <span class="lang-en">Years Experience</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="ps-lg-5">
+                        <h6 class="text-primary fw-bold text-uppercase mb-3">
+                            <span class="lang-bn">কে আমি?</span><span class="lang-en">Who am I?</span>
+                        </h6>
+                        <h2 class="display-5 fw-bold mb-4">
+                            <span class="lang-bn">সৃজনশীলতা এবং কোডিং এর নিখুঁত মিশ্রণ</span>
+                            <span class="lang-en">A Perfect Blend of Creativity & Code</span>
+                        </h2>
+                        <p class="text-muted fs-5 leading-relaxed mb-4">
+                            <span class="lang-bn">আমি একজন সার্টিফাইড ওয়েব ডেভেলপার। পিক্সেল-পারফেক্ট ডিজাইন এবং ক্লীন
+                                কোড আমার কাজের বৈশিষ্ট্য। আমি শুধুমাত্র একটি ওয়েবসাইট বানাই না, আমি একটি ডিজিটাল
+                                অভিজ্ঞতা তৈরি করি।</span>
+                            <span class="lang-en">I am a certified web developer. Pixel-perfect design and clean code
+                                are the hallmarks of my work. I don't just build a website, I build a digital
+                                experience.</span>
+                        </p>
+
+                        <div class="row g-4 mb-5">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
+                                        <i data-lucide="check-circle" size="24"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1"><span class="lang-bn">পেশাদারিত্ব</span><span
+                                                class="lang-en">Professionalism</span></h6>
+                                        <p class="small text-muted mb-0"><span class="lang-bn">প্রতিটি প্রজেক্টে শতভাগ
+                                                মনোযোগ।</span><span class="lang-en">100% focus on every project.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
+                                        <i data-lucide="zap" size="24"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1"><span class="lang-bn">গতি এবং মান</span><span
+                                                class="lang-en">Speed & Quality</span></h6>
+                                        <p class="small text-muted mb-0"><span class="lang-bn">দ্রুত ডেলিভারি এবং
+                                                উচ্চমান।</span><span class="lang-en">Fast delivery and high
+                                                quality.</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn btn-primary">
+                            <span class="lang-bn">বিস্তারিত আলোচনা করুন</span>
+                            <span class="lang-en">Discuss My Project</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-opacity-10" style="background-color: rgba(99, 102, 241, 0.03);">
+        <div class="container py-5">
+            <h2 class="section-title">
+                <span class="lang-bn">আমার দক্ষতা সমূহ</span>
+                <span class="lang-en">My Technical Expertise</span>
+            </h2>
+            <div class="row g-4">
+                <!-- Frontend -->
+                <div class="col-lg-4">
+                    <div class="skill-category-card">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="p-3 rounded-4 bg-primary text-white"><i data-lucide="layout"></i></div>
+                            <h4 class="fw-bold mb-0"><span class="lang-bn">ফ্রন্টএন্ড</span><span
+                                    class="lang-en">Frontend</span></h4>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div class="skill-pill"><i data-lucide="code"></i> HTML5</div>
+                            <div class="skill-pill"><i data-lucide="palette"></i> CSS3</div>
+                            <div class="skill-pill"><i data-lucide="box"></i> Bootstrap 5</div>
+                            <div class="skill-pill"><i data-lucide="layers"></i> Tailwind CSS</div>
+                            <div class="skill-pill"><i data-lucide="zap"></i> JavaScript (ES6)</div>
+                            <div class="skill-pill"><i data-lucide="monitor"></i> Responsive Design</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="col-lg-4">
+                    <div class="skill-category-card">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="p-3 rounded-4 bg-success text-white"><i data-lucide="server"></i></div>
+                            <h4 class="fw-bold mb-0"><span class="lang-bn">ব্যাকএন্ড</span><span
+                                    class="lang-en">Backend</span></h4>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div class="skill-pill"><i data-lucide="terminal"></i> Python</div>
+                            <div class="skill-pill"><i data-lucide="database"></i> Django</div>
+                            <div class="skill-pill"><i data-lucide="shield-check"></i> Auth Logic</div>
+                            <div class="skill-pill"><i data-lucide="cpu"></i> REST APIs</div>
+                            <div class="skill-pill"><i data-lucide="hard-drive"></i> PostgreSQL</div>
+                            <div class="skill-pill"><i data-lucide="table"></i> SQL Querying</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="col-lg-4">
+                    <div class="skill-category-card">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="p-3 rounded-4 bg-info text-white"><i data-lucide="settings"></i></div>
+                            <h4 class="fw-bold mb-0"><span class="lang-bn">অন্যান্য</span><span class="lang-en">Tools &
+                                    Others</span></h4>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div class="skill-pill"><i data-lucide="github"></i> Git & GitHub</div>
+                            <div class="skill-pill"><i data-lucide="figma"></i> Figma (UI/UX)</div>
+                            <div class="skill-pill"><i data-lucide="globe"></i> SEO Optimization</div>
+                            <div class="skill-pill"><i data-lucide="cloud"></i> Deployment</div>
+                            <div class="skill-pill"><i data-lucide="pen-tool"></i> Logo Design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">
+                <span class="lang-bn">নির্বাচিত প্রজেক্টসমূহ</span>
+                <span class="lang-en">Featured Projects</span>
+            </h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="Small School Or Department Management System.webp" alt="Corporate Website"
+                                loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://fpi-cst.vercel.app/" class="project-btn" title="Live Preview"><i
+                                        data-lucide="external-link"></i></a>
+                                <a href="https://github.com/tanvir404-mah/Live-pp" class="project-btn"
+                                    title="GitHub Source"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="badge bg-primary bg-opacity-10 text-primary mb-2">College</div>
+                            <h5 class="fw-bold mb-3"><span class="lang-bn">স্টুডেন্ট ম্যানেজমেন্ট সমস্যা
+                                    সমাধান</span><span class="lang-en">Student Management Poblem Solve</span></h5>
+                            <p class="text-muted small mb-4">
+                                <span class="lang-bn">আধুনিক ডিজাইনের একটি সম্পূর্ণ রেসপনসিভ ওয়েবসাইট যা প্রতিষ্ঠানের
+                                    স্টুডেন্ট ম্যানেজমেন্ট সমস্যা সমাধান করে। </span>
+                                <span class="lang-en">A fully responsive website with a modern design that solves the
+                                    institution's student management problems.</span>
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge border text-muted">HTML</span>
+                                <span class="badge border text-muted">Bootstrap 5</span>
+                                <span class="badge border text-muted">Python</span>
+                                <span class="badge border text-muted">Django</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="second-mockup-black.webp" alt="Custom Weather App" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://custom-weather-app.vercel.app/" class="project-btn"><i
+                                        data-lucide="external-link"></i></a>
+                                <a href="#" class="project-btn"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="badge bg-success bg-opacity-10 text-success mb-2">Weather App</div>
+                            <h5 class="fw-bold mb-3"><span class="lang-bn">স্মার্ট আবহাওয়া প্ল্যাটফর্ম</span><span
+                                    class="lang-en">Custom Weather App</span></h5>
+                            <p class="text-muted small mb-4">
+                                <span class="lang-bn">মসৃণ নেভিগেশন এবং মসৃণ ব্যবহারকারী প্রবাহ সহ একটি কাস্টম আবহাওয়া
+                                    UI।</span>
+                                <span class="lang-en">A custom weather UI with sleek navigation and smooth
+                                    user flow.</span>
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge border text-muted">HTML5</span>
+                                <span class="badge border text-muted">Bootstrap</span>
+                                <span class="badge border text-muted">API</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <div class="project-img-container">
+                            <img src="pharmacy-p(1).webp" alt="Personal Blog" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://tanvirdevl3.pythonanywhere.com/" class="project-btn"><i
+                                        data-lucide="external-link"></i></a>
+                                <a href="#" class="project-btn"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="badge bg-warning bg-opacity-10 text-warning mb-2">Medicine Shop</div>
+                            <h5 class="fw-bold mb-3"><span class="lang-bn">ফ্যার্মেসি ম্যানেজমেন্ট সিস্টেম </span><span
+                                    class="lang-en">Pharmacy Management System </span></h5>
+                            <p class="text-muted small mb-4">
+                                <span class="lang-bn"> ফ্যার্মেসি ম্যানেজমেন্ট সিস্টেম </span>
+                                <span class="lang-en">A clean and minimalist design that makes the owner's experience
+                                    enjoyable.</span>
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge border text-muted">Python</span>
+                                <span class="badge border text-muted">Django</span>
+                                <span class="badge border text-muted">JavaScripts</span>
+                                <span class="badge border text-muted">HTML5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- demo watch vedio section -->
+    <section class="demo-video-section py-5" style="background-color: #0b1120;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white fw-bold">Watch Project Demos</h2>
+                <div style="width: 50px; height: 3px; background-color: #6366f1; margin: 10px auto;"></div>
+                <p class="text-secondary">Explore the detailed walkthrough of my featured projects.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mb-4">
+                    <div class="video-card p-3"
+                        style="background: #111827; border-radius: 15px; border: 1px solid #1f2937;">
+                        <h4 class="text-white mb-3">Pharmacy Management System Full Review</h4>
+                        <div class="ratio ratio-16x9 shadow-lg" style="border-radius: 10px; overflow: hidden;">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/X0TS4gWRrtY"
+                                title="Pharmacy Management System Review" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-opacity-10" style="background-color: rgba(99, 102, 241, 0.03);">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h2 class="fw-bold mb-4">
+                        <span class="lang-bn">আপনার সাথে কথা বলতে আগ্রহী</span>
+                        <span class="lang-en">Looking Forward to Talking</span>
+                    </h2>
+                    <p class="text-muted mb-5 leading-relaxed">
+                        <span class="lang-bn">আপনার কোন আইডিয়া বা প্রজেক্ট আছে? এখনই মেসেজ দিন, আমি সাধারণত ২৪ ঘণ্টার
+                            মধ্যে উত্তর দিয়ে থাকি।</span>
+                        <span class="lang-en">Have an idea or a project in mind? Send a message now, I usually respond
+                            within 24 hours.</span>
+                    </p>
+                    <div class="card p-4 border-0 shadow-sm mb-4">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="p-3 rounded-circle bg-primary bg-opacity-10 text-primary">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <h6 class="text-muted small mb-1 uppercase font-bold">Email</h6>
+                                <a
+                                    href="mailto:tanvirmahmud.web.dev.lev3@gmail.com">tanvirmahmud.web.dev.lev3@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-4 border-0 shadow-sm">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="p-3 rounded-circle bg-primary bg-opacity-10 text-primary">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div>
+                                <h6 class="text-muted small mb-1 uppercase font-bold">Phone</h6>
+                                <a href="tel:+8801743812478">+880 1743812478</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card p-4 p-md-5 border-0 shadow-lg">
+                        <form id="contact-form">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-uppercase"><span
+                                            class="lang-bn">নাম</span><span class="lang-en">Name</span></label>
+                                    <input type="text" id="contact-name"
+                                        class="form-control form-control-lg bg-light border-0"
+                                        placeholder="Tanvir Mahmud" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-uppercase">Email</label>
+                                    <input type="email" id="contact-email"
+                                        class="form-control form-control-lg bg-light border-0"
+                                        placeholder="example@gamil.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-uppercase"><span
+                                            class="lang-bn">বিষয়</span><span class="lang-en">Subject</span></label>
+                                    <input type="text" id="contact-subject"
+                                        class="form-control form-control-lg bg-light border-0"
+                                        placeholder="Project Title.." required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-uppercase"><span
+                                            class="lang-bn">বার্তা</span><span class="lang-en">Message</span></label>
+                                    <textarea id="contact-message"
+                                        class="form-control form-control-lg bg-light border-0" rows="5"
+                                        placeholder="Tell me about your project..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 py-3 shadow-lg">
+                                        <span class="lang-bn">বার্তা পাঠান</span>
+                                        <span class="lang-en">Send Message</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="mb-4">
+                <a href="https://github.com/tanvir404-mah" class="btn btn-outline-primary btn-sm rounded-pill mx-1"><i
+                        data-lucide="github" width="20" height="20" aria-label="GitHub Profile"></i></a>
+                <a href="https://www.linkedin.com/in/tanvirmahmud08/"
+                    class="btn btn-outline-primary btn-sm rounded-pill mx-1"><i data-lucide="linkedin" width="20"
+                        height="20"></i></a>
+                <a href="https://x.com/tanvir_dev_l3" class="btn btn-outline-primary btn-sm rounded-pill mx-1"><i
+                        data-lucide="twitter" width="20" height="20"></i></a>
+            </div>
+            <p class="text-muted small mb-0">
+                © 2026 Tanvir Mahmud.
+                <span class="lang-bn">সর্বস্বত্ব সংরক্ষিত।</span>
+                <span class="lang-en">All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script>
+        (function () {
+            var originalFetch = window.fetch;
+            Object.defineProperty(window, 'fetch', {
+                get: function () { return originalFetch; },
+                set: function (v) { console.warn('Attempted to overwrite window.fetch'); },
+                configurable: true
+            });
+        })();
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js" defer></script>
+</body>
+
+</html>
