@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', system-ui, sans-serif;
     transition: background-color 0.3s, color 0.3s;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -43,7 +43,7 @@ body.light-mode {
 }
 
 .dark-mode .badge {
-    color: var(--text-dark) !important;
+    color: var(--text-dark);
 }
 
 [lang="en"] .lang-bn {
@@ -70,7 +70,7 @@ body.light-mode {
 
 /* Light Mode */
 .light-mode .navbar {
-    background: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-light);
@@ -190,9 +190,8 @@ body.light-mode {
     position: relative;
     padding: 20px;
     border: 1px solid #d1d5db;
-    /* হালকা বর্ডার যেমন স্ক্রিনশটে আছে */
     border-radius: 20px;
-    background: #f8fafc;
+    background: var(--bg-light);
     text-align: center;
 }
 
@@ -340,7 +339,7 @@ body.light-mode {
     overflow: hidden;
     border: 1px solid var(--border-light);
     background: var(--card-light);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark-mode .project-card {
@@ -351,7 +350,7 @@ body.light-mode {
 
 .project-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
 .project-img-container {
@@ -470,19 +469,10 @@ body.light-mode {
     overflow: hidden;
 }
 
-.icon-circle {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
 /* --- Certification Section--- */
 .main-title,
 .point-text {
-    color: #1e293b !important;
+    color: var(--text-light);
 }
 
 .description-text {
