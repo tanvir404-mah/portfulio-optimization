@@ -234,20 +234,6 @@ body.light-mode {
     border-radius: 10px;
 }
 
-/* বাটন স্টাইল */
-.custom-btn {
-    background-color: #6366f1;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.custom-btn:hover {
-    background-color: #4f46e5;
-    transform: translateY(-2px);
-}
-
 /* Dark Mode Adjustments */
 .dark-mode .about-img-container {
     background: rgba(30, 41, 59, 0.5);
@@ -297,36 +283,7 @@ body.light-mode {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* ডান পাশের ব্যাজ পজিশন */
-.cert-badge-top-right {
-    right: 20px;
-}
-
-.cert-badge-top-right i {
-    color: #f59e0b;
-    width: 16px;
-}
-
 /* Gold Color */
-
-/* --- RESPONSIVE PERFECT FIX --- */
-@media (max-width: 992px) {
-    .about-image-wrapper {
-        margin: 0 auto;
-    }
-
-    .experience-badge {
-        bottom: 10px;
-        left: 10px;
-        font-size: 0.75rem;
-    }
-
-    .cert-badge {
-        top: 10px;
-        right: 10px;
-        font-size: 0.7rem;
-    }
-}
 
 @media (max-width: 576px) {
     .experience-badge {
@@ -499,20 +456,11 @@ body.light-mode {
     padding: 0;
 }
 
-section {
+.hero-section,
+#projects,
+#skills {
     content-visibility: auto;
     contain-intrinsic-size: 500px;
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* NSDA Certification Styling */
@@ -531,16 +479,7 @@ section {
     border-radius: 50%;
 }
 
-/* --- Certification Section (Clean Version) --- */
-
-/* ১. মেইন সেকশন ব্যাকগ্রাউন্ড (Light Mode) */
-#certification {
-    background-color: #f8fafc;
-    /* হালকা সুন্দর গ্রে */
-    transition: background-color 0.3s ease;
-}
-
-/* ২. টেক্সট কালার (Light Mode) */
+/* --- Certification Section--- */
 .main-title,
 .point-text {
     color: #1e293b !important;
@@ -550,7 +489,7 @@ section {
     color: #475569 !important;
 }
 
-/* ৩. সার্টিফিকেটের ফ্রেম এবং ইমেজ সাইজ */
+/* certificate */
 .cert-frame-modern {
     background: #ffffff;
     padding: 12px;
@@ -560,18 +499,16 @@ section {
     display: inline-block;
     position: relative;
     max-width: 400px;
-    /* আপনার চাহিদা অনুযায়ী ইমেজ ফ্রেম ছোট করা হয়েছে */
 }
 
 .certificate-img {
     width: 100%;
-    /* ফ্রেমের ভেতরে ইমেজ পূর্ণ থাকবে */
     height: auto;
     border-radius: 8px;
     display: block;
 }
 
-/* ৪. সরকারি ব্যাজ (Govt. Badge) */
+/* Govt. Badge*/
 .gov-status-badge {
     position: absolute;
     top: -15px;
