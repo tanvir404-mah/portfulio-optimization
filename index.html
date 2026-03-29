@@ -5,350 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanvir Mahmud | Certified Web Developer</title>
-    <link rel="preload" href="/css/bootstrap.css" as="style">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="preload" as="image" href="tanvir-pro(rmbg).webp">
     <!-- Preconnect for Google Fonts -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap"
+        media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap"
-        rel="stylesheet">
-
-    <style>
-        * {
-            font-display: swap;
-        }
-
-        :root {
-            --primary-color: #6366f1;
-            --primary-hover: #4f46e5;
-            --bg-light: #f8fafc;
-            --bg-dark: #0f172a;
-            --card-light: #ffffff;
-            --card-dark: #1e293b;
-            --text-light: #0f172a;
-            --text-dark: #f8fafc;
-            --muted-light: #64748b;
-            --muted-dark: #94a3af;
-            --border-light: #e2e8f0;
-            --border-dark: #334155;
-            --accent-glow: rgba(99, 102, 241, 0.15);
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        body.dark-mode {
-            background-color: var(--bg-dark);
-            color: var(--text-dark);
-        }
-
-        body.light-mode {
-            background-color: var(--bg-light);
-            color: var(--text-light);
-        }
-
-        .dark-mode .text-muted {
-            color: var(--muted-dark) !important;
-        }
-
-        .dark-mode .card {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
-            color: var(--text-dark);
-        }
-
-        .dark-mode .badge {
-            color: var(--text-dark) !important;
-        }
-
-        [lang="en"] .lang-bn {
-            display: none !important;
-        }
-
-        [lang="bn"] .lang-en {
-            display: none !important;
-        }
 
 
-        .navbar {
-
-            background-color: transparent;
-            transition: all 0.4s ease;
-            z-index: 1050;
-            padding: 15px 0;
-        }
-
-
-        .light-mode .navbar {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-light);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-
-        .dark-mode .navbar {
-            background-color: rgba(15, 23, 42, 0.95) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-dark);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .light-mode .navbar .nav-link,
-        .light-mode .navbar .navbar-brand {
-            color: #1e293b !important;
-        }
-
-        .dark-mode .navbar .nav-link,
-        .dark-mode .navbar .navbar-brand {
-            color: #f8fafc !important;
-        }
-
-
-        body {
-            padding-top: 70px;
-
-        }
-
-        .cursor-pointer {
-            cursor: pointer;
-        }
-
-        .hero-section {
-            padding: 180px 0 120px;
-            position: relative;
-        }
-
-        .section-title {
-            font-weight: 800;
-            margin-bottom: 4rem;
-            text-align: center;
-            font-size: 2.5rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 14px 32px;
-            font-weight: 700;
-            border-radius: 14px;
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px -5px var(--accent-glow);
-        }
-
-        /* --- About Section Enhancement --- */
-        .about-image-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--primary-color);
-            border-radius: 24px;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        .experience-card {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px -10px var(--accent-glow);
-        }
-
-        /* --- Skills Section Enhancement --- */
-        .skill-category-card {
-            border-radius: 24px;
-            padding: 2rem;
-            height: 100%;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s;
-        }
-
-        .dark-mode .skill-category-card {
-            border-color: var(--border-dark);
-            background: rgba(30, 41, 59, 0.5);
-        }
-
-        .skill-category-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        .skill-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary-color);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin: 4px;
-            transition: all 0.2s;
-        }
-
-        .skill-pill:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* --- Project Section Enhancement --- */
-        .project-card {
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            background: var(--card-light);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .dark-mode .project-card {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
-
-        }
-
-        .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-img-container {
-            position: relative;
-            overflow: hidden;
-            height: 240px;
-        }
-
-        .project-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s;
-        }
-
-        .project-card:hover .project-img-container img {
-            transform: scale(1.1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-btn {
-            width: 45px;
-            height: 45px;
-            background: white;
-            color: var(--bg-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .project-btn:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .footer {
-            padding: 4rem 0;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .dark-mode .footer {
-            border-color: var(--border-dark);
-        }
-
-        .leading-relaxed {
-            line-height: 1.8;
-        }
-
-        .video-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border-color: #6366f1 !important;
-        }
-
-        .demo-video-section h2 {
-            font-size: 2.5rem;
-        }
-
-
-
-        [data-lucide] {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
-            display: inline-block;
-        }
-
-
-        .footer .btn-outline-primary {
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-        }
-    </style>
 </head>
 
 <body class="dark-mode">
@@ -444,73 +113,178 @@
     <section id="about" class="py-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
+
+                <!-- LEFT CONTENT (Image & Experience) -->
                 <div class="col-lg-5">
-                    <div class="about-image-wrapper">
-                        <img src="tanvir-pro(rmbg).webp" alt="Tanvir Mahmud"
-                            class="img-fluid rounded-4 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
-                        <div class="experience-card position-absolute bottom-0 start-50 translate-middle-x mb-n4 w-75">
+                    <div class="about-img-container">
+
+                        <!-- 🔥 Certification Badge added here -->
+                        <div class="cert-badge-top">
+                            <i data-lucide="award"></i>
+                            <span>Certified Developer</span>
+                        </div>
+
+                        <img src="tanvir-pro(rmbg).webp" alt="Tanvir Mahmud - full stack developer"
+                            class="img-fluid main-profile-img">
+
+                        <!-- Experience Card -->
+                        <div class="experience-floating-card">
                             <h2 class="fw-bold mb-0">1+</h2>
-                            <p class="small fw-bold text-uppercase mb-0 opacity-80">
-                                <span class="lang-bn">বছরের অভিজ্ঞতা</span><span class="lang-en">Years Experience</span>
+                            <p class="mb-0">
+                                <span class="lang-bn">বছরের অভিজ্ঞতা</span>
+                                <span class="lang-en">Years Experience</span>
                             </p>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- RIGHT CONTENT -->
                 <div class="col-lg-7">
-                    <div class="ps-lg-5">
-                        <h6 class="text-primary fw-bold text-uppercase mb-3">
-                            <span class="lang-bn">কে আমি?</span><span class="lang-en">Who am I?</span>
+                    <div class="ps-lg-4">
+                        <h6 class="text-primary fw-bold mb-3">
+                            <span class="lang-bn">কে আমি?</span>
+                            <span class="lang-en">Who am I?</span>
                         </h6>
-                        <h2 class="display-5 fw-bold mb-4">
+
+                        <h2 class="display-6 fw-bold mb-4">
                             <span class="lang-bn">সৃজনশীলতা এবং কোডিং এর নিখুঁত মিশ্রণ</span>
                             <span class="lang-en">A Perfect Blend of Creativity & Code</span>
                         </h2>
-                        <p class="text-muted fs-5 leading-relaxed mb-4">
-                            <span class="lang-bn">আমি একজন সার্টিফাইড ওয়েব ডেভেলপার। পিক্সেল-পারফেক্ট ডিজাইন এবং ক্লীন
-                                কোড আমার কাজের বৈশিষ্ট্য। আমি শুধুমাত্র একটি ওয়েবসাইট বানাই না, আমি একটি ডিজিটাল
-                                অভিজ্ঞতা তৈরি করি।</span>
-                            <span class="lang-en">I am a certified web developer. Pixel-perfect design and clean code
-                                are the hallmarks of my work. I don't just build a website, I build a digital
-                                experience.</span>
+
+                        <p class="text-muted mb-5">
+                            <span class="lang-bn">আমি একজন ফুল স্ট্যাক ওয়েব ডেভেলপার, যিনি জটিল সমস্যাকে চমৎকার ও
+                                উচ্চ-কর্মক্ষমতাসম্পন্ন ডিজিটাল সমাধানে রূপান্তর করতে প্রতিশ্রুতিবদ্ধ।
+
+                                ব্যাকএন্ড আর্কিটেকচার এবং ফ্রন্টএন্ড নান্দনিকতায় গভীর দক্ষতার মাধ্যমে আমি ব্যবহারকারীর
+                                অভিজ্ঞতা এবং প্রযুক্তিগত কার্যকারিতার মধ্যে সেতুবন্ধন তৈরি করি। আমার লক্ষ্য হলো
+                                স্কেলেবল, সুরক্ষিত এবং অত্যন্ত দ্রুতগতির ওয়েব অ্যাপ্লিকেশন তৈরি করা, যা ডিজিটাল যুগে
+                                ব্যবসাগুলোকে উন্নতি করতে সাহায্য করে।</span>
+                            <span class="lang-en">I am a <strong>Full Stack Web Developer</strong> dedicated to turning
+                                complex problems
+                                into elegant, high-performance digital solutions.
+
+                                With a deep expertise in backend architecture and frontend aesthetics, I bridge the gap
+                                between user experience and technical functionality. My goal is to build scalable,
+                                secure, and lightning-fast web applications that help businesses thrive in the digital
+                                age.</span>
                         </p>
 
+                        <!-- Features -->
                         <div class="row g-4 mb-5">
                             <div class="col-sm-6">
-                                <div class="d-flex align-items-start gap-3">
-                                    <div class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
-                                        <i data-lucide="check-circle" size="24"></i>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="feature-icon-box">
+                                        <i data-lucide="check-circle"></i>
                                     </div>
                                     <div>
-                                        <h6 class="fw-bold mb-1"><span class="lang-bn">পেশাদারিত্ব</span><span
-                                                class="lang-en">Professionalism</span></h6>
-                                        <p class="small text-muted mb-0"><span class="lang-bn">প্রতিটি প্রজেক্টে শতভাগ
-                                                মনোযোগ।</span><span class="lang-en">100% focus on every project.</span>
-                                        </p>
+                                        <h6 class="fw-bold mb-1">
+                                            <span class="lang-bn">পেশাদারিত্ব</span>
+                                            <span class="lang-en">Professionalism</span>
+                                        </h6>
+                                        <p class="small text-muted mb-0">প্রতিটি প্রজেক্টে শতভাগ মনোযোগ।</p>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-sm-6">
-                                <div class="d-flex align-items-start gap-3">
-                                    <div class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
-                                        <i data-lucide="zap" size="24"></i>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="feature-icon-box">
+                                        <i data-lucide="zap"></i>
                                     </div>
                                     <div>
-                                        <h6 class="fw-bold mb-1"><span class="lang-bn">গতি এবং মান</span><span
-                                                class="lang-en">Speed & Quality</span></h6>
-                                        <p class="small text-muted mb-0"><span class="lang-bn">দ্রুত ডেলিভারি এবং
-                                                উচ্চমান।</span><span class="lang-en">Fast delivery and high
-                                                quality.</span></p>
+                                        <h6 class="fw-bold mb-1">
+                                            <span class="lang-bn">গতি এবং মান</span>
+                                            <span class="lang-en">Speed & Quality</span>
+                                        </h6>
+                                        <p class="small text-muted mb-0">দ্রুত ডেলিভারি এবং উচ্চমান।</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="#contact" class="btn btn-primary">
-                            <span class="lang-bn">বিস্তারিত আলোচনা করুন</span>
-                            <span class="lang-en">Discuss My Project</span>
-                        </a>
+                        <div class="mt-5">
+                            <div class="d-flex flex-wrap align-items-center gap-3">
+
+                                <a href="#contact" class="btn-action main-btn">
+                                    <span class="lang-bn">বিস্তারিত আলোচনা করুন</span>
+                                    <span class="lang-en">Discuss My Project</span>
+                                </a>
+
+                                <a href="https://www.fiverr.com/tanvir_dev3/" target="_blank"
+                                    class="btn-action fiverr-btn">
+                                    <img src="https://cdn.worldvectorlogo.com/logos/fiverr-1.svg" alt="Fiverr">
+                                    <span>Fiverr</span>
+                                </a>
+
+                                <a href="#contact" target="_blank" class="btn-action upwork-btn">
+                                    <img src="https://cdn.worldvectorlogo.com/logos/upwork-6.svg" alt="Upwork">
+                                    <span>Upwork</span>
+                                </a>
+
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NSDA Certification Section -->
+    <section id="certification" class="py-5">
+        <div class="container py-lg-5">
+            <div class="row align-items-center g-5">
+
+                <!-- LEFT Content -->
+                <div class="col-lg-6 order-2 order-lg-1 text-content">
+                    <h6 class="text-primary fw-bold text-uppercase mb-3">Official Recognition</h6>
+                    <h2 class="display-6 fw-bold mb-4 main-title">
+                        <span class="lang-bn">এনএসডিএ (NSDA) লেভেল-৩ সার্টিফাইড</span>
+                        <span class="lang-en">NSDA Level-3 Certified</span>
+                    </h2>
+
+                    <p class="description-text fs-5 mb-5">
+                        <span class="lang-bn">আমি সফলভাবে জাতীয় দক্ষতা উন্নয়ন কর্তৃপক্ষ (NSDA) থেকে <strong>ওয়েব
+                                ডিজাইন এবং ডেভেলপমেন্ট (লেভেল-৩)</strong> সম্পন্ন করেছি।</span>
+                        <span class="lang-en">I have officially achieved the <strong>National Skill Certificate
+                                (Level-3)</strong> in Web Design and Development from the NSDA.</span>
+                    </p>
+
+                    <!-- Points -->
+                    <div class="cert-points">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="icon-circle-md bg-success bg-opacity-10 text-success">
+                                <i data-lucide="check-circle-2"></i>
+                            </div>
+                            <span class="fw-bold point-text">Verified Technical Competency</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-circle-md bg-primary bg-opacity-10 text-primary">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <span class="fw-bold point-text">Industry Standard Professionalism</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT Image (Smaller Size) -->
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <div class="cert-image-container">
+                        <div class="cert-frame-modern">
+                            <img src="certificate-tanvir-mahmud.webp" alt="NSDA Certificate" class="certificate-img">
+                            <div class="gov-status-badge">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg"
+                                    width="20" alt="Gov Seal">
+                                <span>Govt. Recognized</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -592,7 +366,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-container">
-                            <img src="school-manage.webp" alt="Corporate Website">
+                            <img src="school-manage.webp" width="400" height="240" loading="lazy" decoding="async">
                             <div class="project-overlay">
                                 <a href="https://fpi-cst.vercel.app/" class="project-btn" title="Live Preview"><i
                                         data-lucide="external-link"></i></a>
@@ -623,7 +397,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-container">
-                            <img src="second-mockup-black.webp" alt="Custom Weather App">
+                            <img src="second-mockup-black.webp" width="400" height="240" loading="lazy"
+                                decoding="async">
                             <div class="project-overlay">
                                 <a href="https://custom-weather-app.vercel.app/" class="project-btn"><i
                                         data-lucide="external-link"></i></a>
@@ -653,7 +428,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-container">
-                            <img src="pharmacy-p(1).webp" alt="Personal Blog">
+                            <img src="pharmacy-p(1).webp" width="400" height="240" loading="lazy" decoding="async">
                             <div class="project-overlay">
                                 <a href="https://tanvirdevl3.pythonanywhere.com/" class="project-btn"><i
                                         data-lucide="external-link"></i></a>
@@ -696,7 +471,7 @@
                         style="background: #111827; border-radius: 15px; border: 1px solid #1f2937;">
                         <h4 class="text-white mb-3">Pharmacy Management System Full Review</h4>
                         <div class="ratio ratio-16x9 shadow-lg" style="border-radius: 10px; overflow: hidden;">
-                            <iframe width="560" height="315"
+                            <iframe loading="lazy" width="560" height="315"
                                 src="https://www.youtube.com/embed/X0TS4gWRrtY?si=V1ufAQXCXgpYLrCJ"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -820,11 +595,8 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@0.363.0/dist/umd/lucide.min.js"></script>
-    <script>
-        
-        lucide.createIcons();
-    </script>
+
+    <script defer src="https://unpkg.com/lucide@0.363.0/dist/umd/lucide.min.js"></script>
 
     <script>
 
@@ -838,11 +610,9 @@
         };
 
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initIcons);
-        } else {
-            initIcons();
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
 
         const body = document.body;
         const themeToggle = document.getElementById('theme-toggle');
@@ -917,25 +687,17 @@
             }
         });
     </script>
+    <script> window.addEventListener("scroll", () => {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });</script>
 
 
-
-
-    <script>
-
-        (function () {
-            var originalFetch = window.fetch;
-            Object.defineProperty(window, 'fetch', {
-                get: function () { return originalFetch; },
-                set: function (v) { console.warn('Attempted to overwrite window.fetch'); },
-                configurable: true
-            });
-        })();
-    </script>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,690 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-light: #f8fafc;
+    --bg-dark: #0f172a;
+    --card-light: #ffffff;
+    --card-dark: #1e293b;
+    --text-light: #0f172a;
+    --text-dark: #f8fafc;
+    --muted-light: #64748b;
+    --muted-dark: #94a3af;
+    --border-light: #e2e8f0;
+    --border-dark: #334155;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+.dark-mode .text-muted {
+    color: var(--muted-dark) !important;
+}
+
+.dark-mode .card {
+    background: var(--card-dark);
+    border-color: var(--border-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode .badge {
+    color: var(--text-dark) !important;
+}
+
+[lang="en"] .lang-bn {
+    display: none !important;
+}
+
+[lang="bn"] .lang-en {
+    display: none !important;
+}
+
+
+/* Base Navbar */
+.navbar {
+    background-color: transparent;
+    transition: all 0.35s ease;
+    z-index: 1050;
+    padding: 14px 0;
+}
+
+/* Sticky Scroll Effect */
+.navbar.scrolled {
+    padding: 10px 0;
+}
+
+/* Light Mode */
+.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Mode */
+.dark-mode .navbar {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-dark);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Nav Links */
+.navbar .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect (Underline Animation) */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.light-mode .navbar .nav-link,
+.light-mode .navbar .navbar-brand {
+    color: #1e293b !important;
+}
+
+.dark-mode .navbar .nav-link,
+.dark-mode .navbar .navbar-brand {
+    color: #f8fafc !important;
+}
+
+
+.navbar-toggler {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.hero-section {
+    padding: 180px 0 120px;
+    position: relative;
+}
+
+.section-title {
+    font-weight: 800;
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 14px 32px;
+    font-weight: 700;
+    border-radius: 14px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px var(--accent-glow);
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}
+
+/* --- About Section Styles --- */
+
+.about-img-container {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    /* হালকা বর্ডার যেমন স্ক্রিনশটে আছে */
+    border-radius: 20px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.main-profile-img {
+    max-height: 450px;
+    object-fit: contain;
+    /* ইমেজটি নিচের কার্ডের পেছনে রাখার জন্য */
+    margin-bottom: 20px;
+}
+
+/* ভাসমান এক্সপেরিয়েন্স কার্ড */
+.experience-floating-card {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #6366f1;
+    /* স্ক্রিনশটের বেগুনি/নীল রং */
+    color: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    width: 80%;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.experience-floating-card h2 {
+    font-size: 2.5rem;
+}
+
+/* আইকন বক্স স্টাইল */
+.feature-icon-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e7ff;
+    color: #4f46e5;
+    border-radius: 10px;
+}
+
+/* বাটন স্টাইল */
+.custom-btn {
+    background-color: #6366f1;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .about-img-container {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.dark-mode .feature-icon-box {
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .about-img-container {
+        margin-bottom: 50px;
+    }
+}
+
+/* Badge Positioning */
+.cert-badge-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    z-index: 5;
+}
+
+.cert-badge-top i {
+    width: 18px;
+    color: #f59e0b;
+    /* Golden award color */
+}
+
+/* Dark mode adjust */
+.dark-mode .cert-badge-top {
+    background: #1e293b;
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ডান পাশের ব্যাজ পজিশন */
+.cert-badge-top-right {
+    right: 20px;
+}
+
+.cert-badge-top-right i {
+    color: #f59e0b;
+    width: 16px;
+}
+
+/* Gold Color */
+
+/* --- RESPONSIVE PERFECT FIX --- */
+@media (max-width: 992px) {
+    .about-image-wrapper {
+        margin: 0 auto;
+    }
+
+    .experience-badge {
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.75rem;
+    }
+
+    .cert-badge {
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .experience-badge {
+        padding: 8px 10px;
+    }
+
+    .cert-badge {
+        padding: 5px 8px;
+    }
+}
+
+/* --- Skills Section Enhancement --- */
+.skill-category-card {
+    border-radius: 24px;
+    padding: 2rem;
+    height: 100%;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s;
+}
+
+.dark-mode .skill-category-card {
+    border-color: var(--border-dark);
+    background: rgba(30, 41, 59, 0.5);
+}
+
+.skill-category-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 4px;
+    transition: all 0.2s;
+}
+
+.skill-pill:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* --- Project Section Enhancement --- */
+.project-card {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    background: var(--card-light);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode .project-card {
+    background: var(--card-dark);
+    border-color: var(--border-dark);
+
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-img-container {
+    position: relative;
+    overflow: hidden;
+    height: 240px;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.project-card:hover .project-img-container img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-btn {
+    width: 45px;
+    height: 45px;
+    background: white;
+    color: var(--bg-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.project-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.footer {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.dark-mode .footer {
+    border-color: var(--border-dark);
+}
+
+.leading-relaxed {
+    line-height: 1.8;
+}
+
+.video-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: #6366f1 !important;
+}
+
+.demo-video-section h2 {
+    font-size: 2.5rem;
+}
+
+
+
+[data-lucide] {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    display: inline-block;
+}
+
+
+.footer .btn-outline-primary {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+section {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NSDA Certification Styling */
+#certification {
+    background-color: #f8fafc;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* --- Certification Section (Clean Version) --- */
+
+/* ১. মেইন সেকশন ব্যাকগ্রাউন্ড (Light Mode) */
+#certification {
+    background-color: #f8fafc;
+    /* হালকা সুন্দর গ্রে */
+    transition: background-color 0.3s ease;
+}
+
+/* ২. টেক্সট কালার (Light Mode) */
+.main-title,
+.point-text {
+    color: #1e293b !important;
+}
+
+.description-text {
+    color: #475569 !important;
+}
+
+/* ৩. সার্টিফিকেটের ফ্রেম এবং ইমেজ সাইজ */
+.cert-frame-modern {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    display: inline-block;
+    position: relative;
+    max-width: 400px;
+    /* আপনার চাহিদা অনুযায়ী ইমেজ ফ্রেম ছোট করা হয়েছে */
+}
+
+.certificate-img {
+    width: 100%;
+    /* ফ্রেমের ভেতরে ইমেজ পূর্ণ থাকবে */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ৪. সরকারি ব্যাজ (Govt. Badge) */
+.gov-status-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #ffffff;
+    color: #1e293b;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    z-index: 10;
+}
+
+/* ৫. ডার্ক মোড ফিক্স (Dark Mode Support) */
+.dark-mode #certification {
+    background-color: #0f172a !important;
+    /* আপনার ডার্ক মোড ব্যাকগ্রাউন্ড */
+}
+
+.dark-mode .main-title,
+.dark-mode .point-text {
+    color: #f8fafc !important;
+}
+
+.dark-mode .description-text {
+    color: #94a3b8 !important;
+}
+
+.dark-mode .cert-frame-modern {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .gov-status-badge {
+    background: #334155;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* আইকন বক্সের সাইজ */
+.icon-circle-md {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+/* ১. বাটনগুলোর কমন স্টাইল (Uniform Size) */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    height: 52px;
+    /* ৩টি বাটন সমান রাখার জন্য ফিক্সড হাইট */
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    border: none;
+    color: white !important;
+}
+
+/* ২. ইন্ডিভিজুয়াল বাটন কালার */
+.main-btn {
+    background-color: #6366f1;
+    /* Discuss My Project কালার */
+}
+
+.fiverr-btn,
+.upwork-btn {
+    background-color: #1e293b;
+    /* ডিফল্ট ডার্ক লুক */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ৩. হোভার ইফেক্ট (হোভার করলে ব্র্যান্ড কালার আসবে) */
+.btn-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fiverr-btn:hover {
+    background-color: #1dbf73;
+}
+
+.upwork-btn:hover {
+    background-color: #14a800;
+}
+
+/* ৪. আইকন সাইজ ফিক্স */
+.btn-action img,
+.btn-action i {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ৫. মোবাইল রেসপন্সিভ */
+@media (max-width: 576px) {
+    .btn-action {
+        width: 100%;
+        /* মোবাইলে বাটনগুলো ফুল উইডথ হবে */
+        height: 48px;
+        padding: 10px;
+    }
+}
