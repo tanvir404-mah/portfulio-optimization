@@ -9,8 +9,24 @@
         content="Professional Full Stack Web Developer with 1+ years of experience in building scalable web applications. Specialist in MERN Stack, UI/UX, and Custom Digital Solutions.">
     <meta name="keywords"
         content="Tanvir, Web Developer, Full Stack Developer, MERN Stack, React Developer, Node.js Expert, Freelance Developer, Fiverr Web Developer, Upwork Developer, Tanvir.dev">
-    <meta name="author" content="Tanvir">
+    <meta name="author" content="Tanvir Mahmud">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Tanvir | Full Stack Web Developer & Backend Engineer">
+    <meta property="og:description" content="Professional Full Stack Web Developer building scalable web applications.">
+    <meta property="og:image" content="https://yourdomain.com/tanvir-pro(rmbg).webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Tanvir | Full Stack Web Developer & Backend Engineer">
+    <meta property="twitter:description" content="Professional Full Stack Web Developer building scalable web applications.">
+    <meta property="twitter:image" content="https://yourdomain.com/tanvir-pro(rmbg).webp">
+
     <title>Tanvir Mahmud | Certified Web Developer</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.min.css">
@@ -29,8 +45,9 @@
 
 <body class="dark-mode">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- Header & Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
                 <div
@@ -61,15 +78,15 @@
                 </ul>
 
                 <div class="d-flex align-items-center gap-2">
-                    <div id="lang-toggle" class="fw-bold p-2 rounded-3 cursor-pointer" title="Switch Language"
-                        style="font-size: 0.85rem;">
+                    <button id="lang-toggle" class="btn btn-link text-decoration-none fw-bold p-2 rounded-3 cursor-pointer text-reset" title="Switch Language"
+                        style="font-size: 0.85rem;" aria-label="Toggle Language">
                         <span class="lang-bn">EN</span>
                         <span class="lang-en">BN</span>
-                    </div>
-                    <div id="theme-toggle" class="p-2 rounded-3 cursor-pointer" title="Toggle Mode">
+                    </button>
+                    <button id="theme-toggle" class="btn btn-link text-decoration-none p-2 rounded-3 cursor-pointer text-reset" title="Toggle Mode" aria-label="Toggle Light/Dark Mode">
                         <i data-lucide="sun" class="sun-icon"></i>
                         <i data-lucide="moon" class="moon-icon d-none"></i>
-                    </div>
+                    </button>
                     <a href="#contact" class="btn btn-primary btn-sm ms-2 rounded-pill px-4">
                         <span class="lang-bn">হায়ার মি</span>
                         <span class="lang-en">Hire Me</span>
@@ -78,7 +95,9 @@
             </div>
         </div>
     </nav>
+    </header>
 
+    <main>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
@@ -136,7 +155,7 @@
 
                         <!-- Experience Card -->
                         <div class="experience-floating-card">
-                            <h2 class="fw-bold mb-0">1+</h2>
+                            <div class="display-4 fw-bold mb-0 mt-2">1+</div>
                             <p class="mb-0">
                                 <span class="lang-bn">বছরের অভিজ্ঞতা</span>
                                 <span class="lang-en">Years Experience</span>
@@ -282,7 +301,7 @@
                 <div class="col-lg-6 order-1 order-lg-2 text-center">
                     <div class="cert-image-container">
                         <div class="cert-frame-modern">
-                            <img src="certificate-tanvir-mahmud.webp" height="500" width="200" alt="NSDA Certificate" class="certificate-img">
+                            <img src="certificate-tanvir-mahmud.webp" height="500" width="400" alt="NSDA Certificate" class="certificate-img img-fluid" loading="lazy" decoding="async">
                             <div class="gov-status-badge">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg"
                                     width="20" height="20" alt="Gov Seal">
@@ -573,6 +592,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="footer py-5 border-top border-secondary border-opacity-10" style="background-color: rgba(99, 102, 241, 0.02);">
         <div class="container">

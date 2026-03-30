@@ -606,12 +606,71 @@ body.light-mode {
     object-fit: contain;
 }
 
-/* ৫. মোবাইল রেসপন্সিভ */
+/* ৫. মোবাইল রেসপন্সিভ ও টাইপোগ্রাফি (Fully Responsive Config) */
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 140px 0 80px;
+    }
+    .experience-floating-card {
+        bottom: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 0 60px;
+    }
+    h1.display-2 { /* Added specificity for hero title */
+        font-size: 2.5rem;
+    }
+    h2.display-6 {
+        font-size: 1.75rem;
+    }
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    .experience-floating-card {
+        width: 90%;
+        padding: 15px 25px;
+    }
+    .experience-floating-card .display-4 {
+        font-size: 2.25rem;
+    }
+    .about-img-container {
+        margin-bottom: 60px;
+    }
+}
+
 @media (max-width: 576px) {
+    .hero-section {
+        padding: 110px 0 50px;
+    }
+    h1.display-2 {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.75rem;
+    }
+    .experience-floating-card {
+        width: 100%;
+        padding: 10px 15px;
+        bottom: -30px;
+    }
+    .btn-primary {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
     .btn-action {
         width: 100%;
         /* মোবাইলে বাটনগুলো ফুল উইডথ হবে */
         height: 48px;
         padding: 10px;
+    }
+    .cert-frame-modern {
+        max-width: 100%;
+    }
+    .project-img-container {
+        height: 200px;
     }
 }
